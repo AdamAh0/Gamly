@@ -9,8 +9,8 @@ const KEYBOARD_ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
 const statusClasses: Record<LetterStatus | 'empty' | 'filled', string> = {
   correct: 'bg-emerald-500 border-emerald-500 text-white',
   present: 'bg-amber-500 border-amber-500 text-white',
-  absent: 'bg-surface-600 border-surface-600 text-white/70',
-  filled: 'border-white/30 text-white',
+  absent: 'bg-surface-800 border-surface-800 text-white/50',
+  filled: 'border-white/30 text-white/60',
   empty: 'border-white/10 text-white',
 }
 
