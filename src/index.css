@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Sora', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Sora', system-ui, sans-serif;
+
+  --color-surface-950: #05050a;
+  --color-surface-900: #0a0a14;
+  --color-surface-800: #11111e;
+  --color-surface-700: #181829;
+  --color-surface-600: #232338;
+  --color-surface-500: #32324d;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+:root {
+  --accent-from: #8b5cf6;
+  --accent-to: #6366f1;
+  --accent-solid: #8b5cf6;
+}
+
+[data-cosmetic="midnight"] {
+  --accent-from: #6366f1;
+  --accent-to: #312e81;
+  --accent-solid: #6366f1;
+}
+
+[data-cosmetic="sunset"] {
+  --accent-from: #fb923c;
+  --accent-to: #ec4899;
+  --accent-solid: #fb923c;
+}
+
+[data-cosmetic="neon"] {
+  --accent-from: #22d3ee;
+  --accent-to: #d946ef;
+  --accent-solid: #22d3ee;
+}
+
+[data-cosmetic="gold"] {
+  --accent-from: #fbbf24;
+  --accent-to: #b45309;
+  --accent-solid: #fbbf24;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #05050a;
+  color: #e5e7eb;
+}
+
+.light body,
+html.light {
+  background-color: #f8f7fc;
+  color: #18181b;
+}
+
+.accent-gradient {
+  background-image: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+}
+
+.accent-text-gradient {
+  background-image: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light .glass {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-solid);
+  border-radius: 8px;
+  opacity: 0.5;
+}
